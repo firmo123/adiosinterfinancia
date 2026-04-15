@@ -20,6 +20,9 @@
         }
 
         @media (prefers-color-scheme: dark) {
+            .header-banner-wrap {
+                background-color: #252525;
+            }
             :root {
                 --text-dark: #f5f5f5;
                 --text-light: #b0b0b0;
@@ -45,11 +48,16 @@
             overflow: hidden;
         }
 
+        .header-banner-wrap {
+            background-color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
         .header-banner {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
+            max-height: 80px;
+            width: auto;
+            display: inline-block;
         }
 
         .header-bar {
@@ -96,7 +104,7 @@
 
         @media (max-width: 768px) {
             .header-banner {
-                height: 120px;
+                max-height: 60px;
             }
             .profile-card {
                 flex-direction: column;
@@ -272,21 +280,6 @@
             font-style: italic;
         }
 
-        .warning-cta {
-            background-color: #e65100;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 3px;
-            margin-top: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .warning-cta a {
-            color: #fff;
-            text-decoration: underline;
-        }
-
         .legal-note {
             font-size: 13px;
             color: var(--text-light);
@@ -323,7 +316,9 @@
 </head>
 <body>
     <header>
-        <img src="Images/Interfinancia%20banner.png" alt="Interfinancia" class="header-banner">
+        <div class="header-banner-wrap">
+            <img src="Images/Interfinancia%20banner.png" alt="Interfinancia" class="header-banner">
+        </div>
         <div class="header-bar">
             <div class="header-content">
                 <h1>Interfinancia</h1>
@@ -372,29 +367,28 @@
         <p data-es="Dada la tensión financiera reportada, este asunto está ahora sujeto a atención legal en curso." data-en="Given the financial stress reported, this matter is now subject to ongoing legal attention.">Dada la tensión financiera reportada, este asunto está ahora sujeto a atención legal en curso.</p>
 
         <div class="warning-section">
-            <h2 data-es="COMPORTAMIENTO SOSPECHOSO RECIENTE — POSIBLE NUEVA IDENTIDAD COMERCIAL" data-en="RECENT SUSPICIOUS BEHAVIOR — POSSIBLE NEW BUSINESS IDENTITY">COMPORTAMIENTO SOSPECHOSO RECIENTE — POSIBLE NUEVA IDENTIDAD COMERCIAL</h2>
+            <h2 data-es="CAMBIO DE IDENTIDAD EMPRESARIAL SOSPECHOSA" data-en="SUSPICIOUS CHANGE OF BUSINESS IDENTITY">CAMBIO DE IDENTIDAD EMPRESARIAL SOSPECHOSA</h2>
 
-            <p data-es="Tras ser citado judicialmente el 2 de abril de 2026, Salvador Gutiérrez Fernández procedió a eliminar de forma sistemática sus perfiles digitales. Los siguientes perfiles fueron eliminados poco después de la citación:" data-en="After being summoned to court on April 2, 2026, Salvador Gutiérrez Fernández systematically removed his digital profiles. The following profiles were deleted shortly after the summons:">Tras ser citado judicialmente el 2 de abril de 2026, Salvador Gutiérrez Fernández procedió a eliminar de forma sistemática sus perfiles digitales. Los siguientes perfiles fueron eliminados poco después de la citación:</p>
+            <p data-es="Salvador Gutiérrez Fernández operaba anteriormente bajo el nombre comercial de &quot;Interfinancia&quot; para servicios hipotecarios y financieros." data-en="Salvador Gutiérrez Fernández previously operated under the business name &quot;Interfinancia&quot; for mortgage and financial services.">Salvador Gutiérrez Fernández operaba anteriormente bajo el nombre comercial de "Interfinancia" para servicios hipotecarios y financieros.</p>
+
+            <p data-es="Dado que tiene deudas pendientes con personas a las que prometió ayudar, parece que ha intentado eliminar rastros de Interfinancia:" data-en="Given that he has outstanding debts with people he promised to help, it appears he has attempted to remove traces of Interfinancia:">Dado que tiene deudas pendientes con personas a las que prometió ayudar, parece que ha intentado eliminar rastros de Interfinancia:</p>
 
             <ul>
                 <li data-es="Perfil personal de LinkedIn — eliminado" data-en="Personal LinkedIn profile — deleted">Perfil personal de LinkedIn — eliminado</li>
-                <li data-es="Perfil de empresa Interfinancia en LinkedIn — eliminado" data-en="Interfinancia company profile on LinkedIn — deleted">Perfil de empresa Interfinancia en LinkedIn — eliminado</li>
+                <li data-es="Perfil empresarial de Interfinancia en LinkedIn — eliminado" data-en="Interfinancia company profile on LinkedIn — deleted">Perfil empresarial de Interfinancia en LinkedIn — eliminado</li>
                 <li data-es="Perfil de Interfinancia en Instagram — eliminado" data-en="Interfinancia Instagram profile — deleted">Perfil de Interfinancia en Instagram — eliminado</li>
-                <li data-es="Página de Facebook de Interfinancia — todavía activa (posiblemente pasada por alto)" data-en="Interfinancia Facebook page — still active (possibly overlooked)">Página de Facebook de Interfinancia — todavía activa (posiblemente pasada por alto)</li>
+                <li data-es="Página de Facebook de Interfinancia — aún activa:" data-en="Interfinancia Facebook page — still active:">Página de Facebook de Interfinancia — aún activa: <a href="https://www.facebook.com/interfinancia" target="_blank" rel="noopener" style="color: var(--text-dark);">facebook.com/interfinancia</a></li>
             </ul>
 
-            <p data-es="La eliminación coordinada de estos perfiles inmediatamente después de recibir una citación judicial es un hecho observable que los afectados y sus representantes legales deben tener en cuenta." data-en="The coordinated removal of these profiles immediately after receiving a court summons is an observable fact that affected parties and their legal representatives should be aware of.">La eliminación coordinada de estos perfiles inmediatamente después de recibir una citación judicial es un hecho observable que los afectados y sus representantes legales deben tener en cuenta.</p>
+            <h3 data-es="POSIBLE NUEVA IDENTIDAD COMERCIAL" data-en="POSSIBLE NEW BUSINESS IDENTITY">POSIBLE NUEVA IDENTIDAD COMERCIAL</h3>
 
-            <h3 data-es="LOGO ENCONTRADO EN PERFIL DE WHATSAPP" data-en="LOGO FOUND ON WHATSAPP PROFILE">LOGO ENCONTRADO EN PERFIL DE WHATSAPP</h3>
+            <p data-es="Este logo aparece actualmente en uno de los perfiles de WhatsApp de Salvador Gutiérrez Fernández:" data-en="This logo currently appears on one of Salvador Gutiérrez Fernández's WhatsApp profiles:">Este logo aparece actualmente en uno de los perfiles de WhatsApp de Salvador Gutiérrez Fernández:</p>
 
             <div class="new-logo-card">
                 <img src="Images/SH%20-%20Salva%20New%20Company.png" alt="Nuevo logo de empresa">
-                <p data-es="Este logo aparece actualmente en uno de los perfiles de WhatsApp de Salvador Gutiérrez Fernández." data-en="This logo currently appears on one of Salvador Gutiérrez Fernández's WhatsApp profiles.">Este logo aparece actualmente en uno de los perfiles de WhatsApp de Salvador Gutiérrez Fernández.</p>
             </div>
 
-            <div class="warning-cta">
-                <span style="color: #fff;" data-es="Si reconoces este logo o has sido contactado por Salvador bajo cualquier nuevo nombre de empresa, contáctanos inmediatamente a" data-en="If you recognize this logo or have been contacted by Salvador under any new business name, contact us immediately at">Si reconoces este logo o has sido contactado por Salvador bajo cualquier nuevo nombre de empresa, contáctanos inmediatamente a</span> <a href="mailto:adiosinterfinancia@proton.me">adiosinterfinancia@proton.me</a>
-            </div>
+            <p data-es="Si reconoces este logo o has tenido contacto comercial con Salvador bajo cualquier nombre de empresa diferente a &quot;Interfinancia&quot;, esto puede ser relevante para otras personas afectadas." data-en="If you recognize this logo or have had business contact with Salvador under any company name other than &quot;Interfinancia&quot;, this may be relevant to other affected individuals.">Si reconoces este logo o has tenido contacto comercial con Salvador bajo cualquier nombre de empresa diferente a "Interfinancia", esto puede ser relevante para otras personas afectadas.</p>
         </div>
 
         <h2 data-es="Únase a Nosotros" data-en="Join Us">Únase a Nosotros</h2>
