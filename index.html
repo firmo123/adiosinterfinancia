@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfinancia - Salvador Gutiérrez Fernández</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-white: #ffffff;
+            --bg-light: #f9f9f9;
+            --border: #e5e5e5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-dark: #f5f5f5;
+                --text-light: #b0b0b0;
+                --bg-white: #1a1a1a;
+                --bg-light: #252525;
+                --border: #333;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        header {
+            background-color: var(--bg-light);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .lang-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border);
+            background-color: var(--bg-white);
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-light);
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background-color: var(--text-dark);
+            color: var(--bg-white);
+            border-color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 2rem 0 1.5rem;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+        }
+
+        .address-box {
+            background-color: var(--bg-light);
+            border-left: 3px solid #999;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-size: 14px;
+        }
+
+        .photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .photo-card {
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+            background-color: var(--bg-light);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .photo-caption {
+            padding: 0.75rem;
+            font-size: 13px;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+        }
+
+        .form-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 3px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 14px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            font-family: inherit;
+            font-size: 14px;
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--text-dark);
+        }
+
+        button {
+            background-color: var(--text-dark);
+            color: var(--bg-white);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .legal-note {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            margin-top: 2rem;
+            background-color: var(--bg-light);
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Interfinancia</h1>
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="setLanguage('es')">Español</button>
+                <button class="lang-btn" onclick="setLanguage('en')">English</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 data-es="¿Ha tenido problemas con Interfinancia o Salvador Gutiérrez Fernández?" data-en="Have You Had Issues With Interfinancia or Salvador Gutiérrez Fernández?">¿Ha tenido problemas con Interfinancia o Salvador Gutiérrez Fernández?</h2>
+
+        <p data-es="Estamos recopilando y documentando testimonios y comunicaciones relacionadas con servicios hipotecarios no resueltos vinculados a Salvador Gutiérrez Fernández, conocido por operar bajo el nombre comercial Interfinancia, activo en la ciudad de Málaga y zonas circundantes." data-en="We are collecting and documenting testimonies and communications related to unresolved mortgage services linked to Salvador Gutiérrez Fernández, known to operate under the business name Interfinancia, active in Málaga city and surrounding areas.">Estamos recopilando y documentando testimonios y comunicaciones relacionadas con servicios hipotecarios no resueltos vinculados a Salvador Gutiérrez Fernández, conocido por operar bajo el nombre comercial Interfinancia, activo en la ciudad de Málaga y zonas circundantes.</p>
+
+        <h2 data-es="Un Patrón de Incidentes Reportados" data-en="A Pattern of Reported Incidents">Un Patrón de Incidentes Reportados</h2>
+
+        <p data-es="Varios individuos se han presentado describiendo un patrón repetido en sus experiencias:" data-en="Several individuals have come forward describing a repeating pattern in their experiences:">Varios individuos se han presentado describiendo un patrón repetido en sus experiencias:</p>
+
+        <ul>
+            <li data-es="Se establece confianza inicial a través de comunicación profesional y de apoyo, y aparentemente sólido conocimiento hipotecario." data-en="Initial trust is established through professional, supportive communication and seemingly strong mortgage knowledge.">Se establece confianza inicial a través de comunicación profesional y de apoyo, y aparentemente sólido conocimiento hipotecario.</li>
+            <li data-es="Se realizan pagos anticipados para servicios de corretaje hipotecario: los montos reportados oscilan entre €650 y más de €17,000." data-en="Upfront payments are made for mortgage brokerage services — reported amounts range from €650 to over €17,000.">Se realizan pagos anticipados para servicios de corretaje hipotecario: los montos reportados oscilan entre €650 y más de €17,000.</li>
+            <li data-es="Después del pago, la comunicación disminuye y surgen excusas, a menudo involucrando terceros o retrasos." data-en="After payment, communication reportedly declines, and excuses emerge — often involving third parties or delays.">Después del pago, la comunicación disminuye y surgen excusas, a menudo involucrando terceros o retrasos.</li>
+            <li data-es="Los servicios prometidos, como aprobaciones hipotecarias, no se materializan." data-en="Promised services, such as mortgage approvals, do not materialize.">Los servicios prometidos, como aprobaciones hipotecarias, no se materializan.</li>
+            <li data-es="Los clientes solicitan reembolso conforme al contrato, pero reportan falta de respuesta o retrasos prolongados, sin reembolso, solo excusas." data-en="Clients request a refund in accordance with the contract, but describe either a lack of response or long delays, resulting in no refund - just excuses.">Los clientes solicitan reembolso conforme al contrato, pero reportan falta de respuesta o retrasos prolongados, sin reembolso, solo excusas.</li>
+            <li data-es="En algunos casos, se proponen cartas de reconocimiento de deuda o planes de pago, pero no se ejecutan." data-en="In some cases, debt acknowledgement letters or repayment plans are proposed but no payment is ever made.">En algunos casos, se proponen cartas de reconocimiento de deuda o planes de pago, pero no se ejecutan.</li>
+            <li data-es="Los intentos de perseguir remedios legales se complican a menudo por la ausencia de una dirección física confiable para notificación." data-en="Attempts to pursue legal remedies are often complicated by the absence of a reliable physical address for notification.">Los intentos de perseguir remedios legales se complican a menudo por la ausencia de una dirección física confiable para notificación.</li>
+        </ul>
+
+        <div class="address-box">
+            <p><strong data-es="Dirección reportada:" data-en="Reported address:">Dirección reportada:</strong> Calle Don Ricardo, 2, 4ºA — <span data-es="reportada como no válida" data-en="reported as no longer valid">reportada como no válida</span></p>
+        </div>
+
+        <h2 data-es="Imágenes e Identificación" data-en="Images and Activity">Imágenes e Identificación</h2>
+
+        <p data-es="Imágenes de Salvador Gutiérrez Fernández, obtenidas de plataformas públicamente disponibles, compartidas estrictamente para fines de identificación e informativos relacionados con estas disputas de servicios hipotecarios." data-en="Images of Salvador Gutiérrez Fernández, obtained from publicly available online platforms, shared here strictly for identification and informational purposes related to these mortgage service disputes.">Imágenes de Salvador Gutiérrez Fernández, obtenidas de plataformas públicamente disponibles, compartidas estrictamente para fines de identificación e informativos relacionados con estas disputas de servicios hipotecarios.</p>
+
+        <div class="photos">
+            <div class="photo-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23ddd' width='200' height='200'/%3E%3C/svg%3E" alt="LinkedIn">
+                <div class="photo-caption" data-es="Perfil de LinkedIn" data-en="LinkedIn Profile">LinkedIn Profile</div>
+            </div>
+            <div class="photo-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23ddd' width='200' height='200'/%3E%3C/svg%3E" alt="WhatsApp">
+                <div class="photo-caption" data-es="Perfil de WhatsApp Business" data-en="WhatsApp Business Profile">WhatsApp Business</div>
+            </div>
+        </div>
+
+        <h2 data-es="¿Por Qué Importa?" data-en="Why This Matters">¿Por Qué Importa?</h2>
+
+        <p data-es="Basado en estas experiencias documentadas, existe una creciente preocupación sobre actividades relacionadas con servicios hipotecarios bajo la marca Interfinancia. No hacemos acusaciones, pero creemos que el público tiene derecho a saber y tomar precauciones." data-en="Based on these documented experiences, there is growing concern about activities related to mortgage services operating under the Interfinancia brand. We make no accusations — but we do believe the public has a right to know and take precautions.">Basado en estas experiencias documentadas, existe una creciente preocupación sobre actividades relacionadas con servicios hipotecarios bajo la marca Interfinancia. No hacemos acusaciones, pero creemos que el público tiene derecho a saber y tomar precauciones.</p>
+
+        <p data-es="Dada la tensión financiera reportada, este asunto está ahora sujeto a atención legal en curso." data-en="Given the financial stress reported, this matter is now subject to ongoing legal attention.">Dada la tensión financiera reportada, este asunto está ahora sujeto a atención legal en curso.</p>
+
+        <h2 data-es="Únase a Nosotros" data-en="Join Us">Únase a Nosotros</h2>
+
+        <p data-es="Si cree que ha sido afectado o ha tenido tratos con Salvador Gutiérrez Fernández / Interfinancia, le animamos a ponerse en contacto. Estamos construyendo un registro de casos para coordinar acciones legales potenciales y compartir información de manera transparente." data-en="If you believe you've been affected or if you had dealings with Salvador Gutiérrez Fernández / Interfinancia, we encourage you to get in touch. We are building a list of cases in order to coordinate potential legal action and to share information transparently.">Si cree que ha sido afectado o ha tenido tratos con Salvador Gutiérrez Fernández / Interfinancia, le animamos a ponerse en contacto. Estamos construyendo un registro de casos para coordinar acciones legales potenciales y compartir información de manera transparente.</p>
+
+        <div class="form-box">
+            <h3 data-es="Formulario de Contacto" data-en="Contact Form">Formulario de Contacto</h3>
+            <form action="https://formspree.io/f/xanwjvde" method="POST">
+                <div class="form-group">
+                    <label for="name" data-es="Nombre Completo (opcional)" data-en="Full Name (optional)">Nombre Completo (opcional)</label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" data-es="Correo Electrónico *" data-en="Email Address *">Correo Electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" data-es="Número de Teléfono (opcional)" data-en="Phone Number (optional)">Número de Teléfono (opcional)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="message" data-es="Descripción Breve de Su Experiencia *" data-en="Brief Description of Your Experience *">Descripción Breve de Su Experiencia *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" data-es="Enviar" data-en="Submit">Enviar</button>
+            </form>
+        </div>
+
+        <div class="legal-note">
+            <strong data-es="Nota Legal" data-en="Legal Note">Nota Legal</strong>
+            <p data-es="Este sitio web se ha creado con fines informativos y testimoniales. Todas las declaraciones se basan en experiencias personales documentadas, comunicaciones escritas y fuentes públicamente disponibles. No se extraen conclusiones legales, y no se hace acusación alguna sin sentencia judicial." data-en="This website is created for informational and testimonial purposes. All statements are based on personal experiences, written communications, and publicly available sources. No legal conclusions are drawn, and no accusation is made without a court ruling.">Este sitio web se ha creado con fines informativos y testimoniales. Todas las declaraciones se basan en experiencias personales documentadas, comunicaciones escritas y fuentes públicamente disponibles. No se extraen conclusiones legales, y no se hace acusación alguna sin sentencia judicial.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p data-es="© 2025 Información Documentada" data-en="© 2025 Documented Information">© 2025 Información Documentada</p>
+    </footer>
+
+    <script>
+        let currentLang = 'es';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-es][data-en]').forEach(el => {
+                const text = lang === 'es' ? el.getAttribute('data-es') : el.getAttribute('data-en');
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = text;
+                } else {
+                    el.textContent = text;
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
