@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interfinancia - Salvador Gutiérrez Fernández</title>
+    <title>Advertencia - Problemas con broker Interfinancia Salvador Gutiérrez Fernández</title>
     <style>
         * {
             margin: 0;
@@ -21,7 +21,10 @@
 
         @media (prefers-color-scheme: dark) {
             .header-banner-wrap {
-                background-color: #252525;
+                background-color: #b71c1c;
+            }
+            .header-bar {
+                background-color: #8e0000;
             }
             :root {
                 --text-dark: #f5f5f5;
@@ -49,20 +52,75 @@
         }
 
         .header-banner-wrap {
-            background-color: #fff;
+            background-color: #c62828;
             text-align: center;
-            padding: 1.5rem;
+            padding: 1rem 1.5rem;
         }
 
-        .header-banner {
-            max-height: 80px;
-            width: auto;
-            display: inline-block;
+        .header-warning-text {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .header-bar {
-            background-color: var(--bg-light);
+            background-color: #b71c1c;
             padding: 1rem 1.5rem;
+        }
+
+        .disclaimer-banner {
+            background-color: #fff3e0;
+            border-bottom: 3px solid #e65100;
+            padding: 1rem 1.5rem;
+            text-align: center;
+        }
+
+        .disclaimer-banner p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 14px;
+            font-weight: 700;
+            color: #bf360c;
+            line-height: 1.5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .disclaimer-banner {
+                background-color: #3e1a00;
+                border-color: #e65100;
+            }
+            .disclaimer-banner p {
+                color: #ffab91;
+            }
+        }
+
+        .logo-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+        }
+
+        .logo-card img {
+            max-height: 80px;
+            width: auto;
+            flex-shrink: 0;
+        }
+
+        .logo-card p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .logo-card {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         .header-content {
@@ -77,6 +135,7 @@
         h1 {
             font-size: 24px;
             font-weight: 600;
+            color: #fff;
         }
 
         .profile-card {
@@ -103,8 +162,8 @@
         }
 
         @media (max-width: 768px) {
-            .header-banner {
-                max-height: 60px;
+            .header-warning-text {
+                font-size: 16px;
             }
             .profile-card {
                 flex-direction: column;
@@ -119,19 +178,19 @@
 
         .lang-btn {
             padding: 0.5rem 0.75rem;
-            border: 1px solid var(--border);
-            background-color: var(--bg-white);
+            border: 1px solid rgba(255,255,255,0.4);
+            background-color: transparent;
             cursor: pointer;
             font-size: 14px;
-            color: var(--text-light);
+            color: rgba(255,255,255,0.7);
             border-radius: 3px;
             transition: all 0.2s;
         }
 
         .lang-btn.active {
-            background-color: var(--text-dark);
-            color: var(--bg-white);
-            border-color: var(--text-dark);
+            background-color: #fff;
+            color: #b71c1c;
+            border-color: #fff;
         }
 
         .container {
@@ -317,11 +376,11 @@
 <body>
     <header>
         <div class="header-banner-wrap">
-            <img src="Images/Interfinancia%20banner.png" alt="Interfinancia" class="header-banner">
+            <span class="header-warning-text" data-es="ADVERTENCIA SOBRE INTERFINANCIA" data-en="WARNING ABOUT INTERFINANCIA">ADVERTENCIA SOBRE INTERFINANCIA</span>
         </div>
         <div class="header-bar">
             <div class="header-content">
-                <h1>Interfinancia</h1>
+                <h1 data-es="Sitio de Advertencia" data-en="Warning Site">Sitio de Advertencia</h1>
                 <div class="lang-toggle">
                     <button class="lang-btn active" onclick="setLanguage('es')">Español</button>
                     <button class="lang-btn" onclick="setLanguage('en')">English</button>
@@ -330,10 +389,14 @@
         </div>
     </header>
 
+    <div class="disclaimer-banner">
+        <p data-es="ESTE NO ES EL SITIO OFICIAL DE INTERFINANCIA. Este es un sitio de advertencia creado por víctimas para informar sobre problemas con Salvador Gutiérrez Fernández y sus servicios." data-en="THIS IS NOT THE OFFICIAL INTERFINANCIA WEBSITE. This is a warning site created by victims to inform others about issues with Salvador Gutiérrez Fernández and his services.">ESTE NO ES EL SITIO OFICIAL DE INTERFINANCIA. Este es un sitio de advertencia creado por víctimas para informar sobre problemas con Salvador Gutiérrez Fernández y sus servicios.</p>
+    </div>
+
     <div class="container">
         <h2 data-es="¿Ha tenido problemas con Interfinancia o Salvador Gutiérrez Fernández?" data-en="Have You Had Issues With Interfinancia or Salvador Gutiérrez Fernández?">¿Ha tenido problemas con Interfinancia o Salvador Gutiérrez Fernández?</h2>
 
-        <p data-es="Estamos recopilando y documentando testimonios y comunicaciones relacionadas con servicios hipotecarios no resueltos vinculados a Salvador Gutiérrez Fernández, conocido por operar bajo el nombre comercial Interfinancia, activo en la ciudad de Málaga y zonas circundantes." data-en="We are collecting and documenting testimonies and communications related to unresolved mortgage services linked to Salvador Gutiérrez Fernández, known to operate under the business name Interfinancia, active in Málaga city and surrounding areas.">Estamos recopilando y documentando testimonios y comunicaciones relacionadas con servicios hipotecarios no resueltos vinculados a Salvador Gutiérrez Fernández, conocido por operar bajo el nombre comercial Interfinancia, activo en la ciudad de Málaga y zonas circundantes.</p>
+        <p data-es="Salvador Gutiérrez Fernández actuaba como broker hipotecario bajo la marca Interfinancia en la ciudad de Málaga y zonas circundantes. Estamos recopilando y documentando testimonios y comunicaciones relacionadas con servicios hipotecarios no resueltos vinculados a este broker financiero." data-en="Salvador Gutiérrez Fernández operated as a mortgage broker under the Interfinancia brand in Málaga city and surrounding areas. We are collecting and documenting testimonies and communications related to unresolved mortgage services linked to this financial broker.">Salvador Gutiérrez Fernández actuaba como broker hipotecario bajo la marca Interfinancia en la ciudad de Málaga y zonas circundantes. Estamos recopilando y documentando testimonios y comunicaciones relacionadas con servicios hipotecarios no resueltos vinculados a este broker financiero.</p>
 
         <h2 data-es="Un Patrón de Incidentes Reportados" data-en="A Pattern of Reported Incidents">Un Patrón de Incidentes Reportados</h2>
 
@@ -363,6 +426,11 @@
         <div class="profile-card">
             <img src="Images/Salva%20-%20WhatsApp.png" alt="Salvador Gutiérrez Fernández — WhatsApp">
             <p data-es="Salvador Gutiérrez Fernández — imagen obtenida del perfil de WhatsApp Business de Interfinancia de Salva, compartida estrictamente para fines de identificación relacionados con estas disputas de servicios hipotecarios." data-en="Salvador Gutiérrez Fernández — image obtained from Salva's Interfinancia business WhatsApp profile, shared strictly for identification purposes related to these mortgage service disputes.">Salvador Gutiérrez Fernández — imagen obtenida del perfil de WhatsApp Business de Interfinancia de Salva, compartida estrictamente para fines de identificación relacionados con estas disputas de servicios hipotecarios.</p>
+        </div>
+
+        <div class="logo-card">
+            <img src="Images/Interfinancia%20banner.png" alt="Logo de Interfinancia">
+            <p data-es="Logo oficial de Interfinancia utilizado por Salvador Gutiérrez Fernández en sus actividades como broker hipotecario." data-en="Official Interfinancia logo used by Salvador Gutiérrez Fernández in his activities as a mortgage broker.">Logo oficial de Interfinancia utilizado por Salvador Gutiérrez Fernández en sus actividades como broker hipotecario.</p>
         </div>
 
         <h2 data-es="¿Por Qué Importa?" data-en="Why This Matters">¿Por Qué Importa?</h2>
